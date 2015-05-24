@@ -1,6 +1,6 @@
 {
   "name": "ogre-cache",
-  "description": "Simple flash messages for Express",
+  "description": "Simple browser headers cache control for Express",
   "version": "0.0.1",
   "author": {
     "name": "Luca Fabbri",
@@ -25,6 +25,7 @@
   ],
   "files": [
     "index.js",
+    "configuration.js",
     "LICENSE",
     "README.rst",
     "CHANGES.rst"

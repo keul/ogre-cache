@@ -1,15 +1,8 @@
+var ogreConf = require('./configuration');
+
 var configuration_registry = {
   default: [{
-    regex: /.+\.css($|\?.*$)/i,
-    max_age: 604800
-  }, {
-    regex: /.+\.js($|\?.*$)/i,
-    max_age: 604800
-  }, {
-    regex: /.+\.(png|jpe?g|png|svg)($|\?.*$)/i,
-    max_age: 604800
-  }, {
-    regex: /.+\.(ttf|eot|woff)($|\?.*$)/i,
+    regex: /[^?]+\.(css|js|png|jpe?g|png|svg|ttf|eot|woff)($|\?.*$)/i,
     max_age: 604800
   }]
 };
@@ -30,22 +23,21 @@ var cache_mid_generator = function() {
       i,
       configurations = [];
 
-    for (i = cache_configuration.length-1; i >= 0; i--) {
+    for (i = cache_configuration.length - 1; i >= 0; i--) {
       if (typeof(cache_configuration[i]) === 'string') {
-        configurations.push(configuration_registry[cache_configuration[i]]);
+        configurations = configurations.concat(configuration_registry[cache_configuration[i]]);
+      } else if (cache_configuration[i] instanceof ogreConf.CacheConfiguration) {
+        configurations = configurations.concat(cache_configuration[i].getConfiguration());
       } else {
-        // nop
+        throw new ogreConf.CacheConfigurationTypeError(typeof(cache_configuration[i]));
       }
     }
     for (i = 0; i < configurations.length; i++) {
-      var configuration = configurations[i],
-        j;
-      for (j = 0; j < configuration.length; j++) {
-        if (configuration[j].regex.test(url)) {
-          res.setHeader("Cache-Control", "public, max-age=" + configuration[j].max_age);
-          next();
-          return;
-        }
+      var configuration = configurations[i];
+      if (configuration.regex.test(url)) {
+        res.setHeader("Cache-Control", "public, max-age=" + configuration.max_age);
+        next();
+        return;
       }
     }
     // cache miss
@@ -54,4 +46,13 @@ var cache_mid_generator = function() {
 
 };
 
+/**
+ * Save a CacheConfiguration in the global registry
+ */
+var register_named_configuration = function(name, conf) {
+  configuration_registry[name] = conf.getConfiguration();
+};
+
 module.exports.cache = cache_mid_generator;
+module.exports.configuration = ogreConf;
+module.exports.register = register_named_configuration;
