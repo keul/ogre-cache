@@ -1,0 +1,32 @@
+{
+  "name": "ogre-cache",
+  "description": "Simple flash messages for Express",
+  "version": "0.0.1",
+  "author": {
+    "name": "Luca Fabbri",
+    "email": "luca@keul.it",
+    "url": "http://blog.keul.it",
+    "twitter": "https://twitter.com/keul"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keul/ogre-cache.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "keywords": [
+    "cache",
+    "http-cache",
+    "express"
+  ],
+  "files": [
+    "index.js",
+    "LICENSE",
+    "README.rst",
+    "CHANGES.rst"
+  ]
+}
