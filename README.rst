@@ -2,6 +2,20 @@
 Ogre Cache
 ==========
 
+|npmversion| |license| |downloads|
+
+.. |npmversion| image:: https://img.shields.io/npm/v/ogre-cache.svg?style=flat-square
+                :alt: NPM Version
+                :target: https://npmjs.org/package/ogre-cache
+
+.. |license| image:: http://img.shields.io/npm/l/pgre-cache.svg?style=flat-square
+               :alt: License
+               :target: LICENSE
+
+.. |license| image:: http://img.shields.io/npm/dm/ogre-cache.svg?style=flat-square
+             :alt: Downloads
+             :target: https://npmjs.org/package/ogre-cache
+
 .. contents::
 
 Introduction
