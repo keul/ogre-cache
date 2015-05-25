@@ -12,9 +12,9 @@ Ogre Cache
                :alt: License
                :target: LICENSE
 
-.. |license| image:: http://img.shields.io/npm/dm/ogre-cache.svg?style=flat-square
-             :alt: Downloads
-             :target: https://npmjs.org/package/ogre-cache
+.. |downloads| image:: http://img.shields.io/npm/dm/ogre-cache.svg?style=flat-square
+               :alt: Downloads
+               :target: https://npmjs.org/package/ogre-cache
 
 .. contents::
 
