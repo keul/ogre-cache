@@ -25,7 +25,7 @@ Add to `Express <http://expressjs.com/>`_ a simple and rude support to leverage
 **browser cache**.
 
 The framework already support caching with the ``maxAge`` option in the
-`express.static middleware <http://expressjs.com/api.html#express.static>`
+`express.static middleware <http://expressjs.com/api.html#express.static>`_
 but this kind of cache is the weakest one. Relying onto the HTTP 304 status
 code will not avoid the roundtrip of asking to the server if the resource
 is still "fresh".
