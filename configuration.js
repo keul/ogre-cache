@@ -30,7 +30,7 @@ CacheConfiguration.prototype.getConfiguration = function() {
   return this.local_configuration_registry;
 };
 CacheConfiguration.prototype.add = function(conf, max_age) {
-  if (typeof(conf) === 'string' && conf.substr(0, 1) === "*") {
+  if (typeof(conf) === 'string' && conf.substr(0, 2) === "*.") {
     regex = new RegExp('/[^?]+\.(' + conf.substr(1, conf.length - 1) + ')($|\?.*$)', 'i');
   } else if (typeof(conf) === 'string') {
     regex = new RegExp(conf, 'i');
