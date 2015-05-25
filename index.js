@@ -2,7 +2,7 @@ var ogreConf = require('./configuration');
 
 var configuration_registry = {
   default: [{
-    regex: /[^?]+\.(css|js|png|jpe?g|png|svg|ttf|eot|woff)($|\?.*$)/i,
+    regex: /[^?]+\.(css|js|png|jpe?g|png|svg|ttf|eot|woff2?)($|\?.*$)/i,
     max_age: 604800
   }]
 };
