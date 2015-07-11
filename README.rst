@@ -8,7 +8,7 @@ Ogre Cache
                 :alt: NPM Version
                 :target: https://npmjs.org/package/ogre-cache
 
-.. |license| image:: http://img.shields.io/npm/l/pgre-cache.svg?style=flat-square
+.. |license| image:: http://img.shields.io/npm/l/ogre-cache.svg?style=flat-square
                :alt: License
                :target: LICENSE
 
