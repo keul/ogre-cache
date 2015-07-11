@@ -1,7 +1,7 @@
 {
   "name": "ogre-cache",
   "description": "Simple browser headers cache control for Express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Luca Fabbri",
     "email": "luca@keul.it",
@@ -14,7 +14,11 @@
     "url": "https://github.com/keul/ogre-cache.git"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "express": "4.x",
+    "mocha": "2.2.x",
+    "supertest": "1.x"
+    },
   "scripts": {
     "test": "mocha --reporter spec"
   },
